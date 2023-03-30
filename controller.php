@@ -18,7 +18,7 @@ echo "<br>";
 print_r($mx_record);
 echo "<br>";
 echo "<br>";
-//print_r($txt_record);
+print_r($txt_record);
 echo "<br>";
 echo "<br>";
 print_r($ns_record);

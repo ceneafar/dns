@@ -16,7 +16,7 @@ class Dns {
 	}
 
 	public function dns_txt(){
-		return dns_get_record($this->host, DNS_TXT);
+		return $this->clean_arr(dns_get_record($this->host, DNS_TXT));
 	}
 
 	public function dns_ns(){
@@ -53,6 +53,10 @@ class Dns {
 
 				if($position[$key] == "AAAA"){
 					array_push($aux, $position["ipv6"]);
+				}
+
+				if($position[$key] == "TXT"){
+					array_push($aux, $position["txt"]);
 				}
 
 			}
