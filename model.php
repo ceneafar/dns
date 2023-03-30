@@ -28,7 +28,7 @@ class Dns {
 	}
 
 	public function dns_aaaa(){
-		return dns_get_record($this->host, DNS_AAAA);
+		return $this->clean_arr(dns_get_record($this->host, DNS_AAAA));
 	}
 
 	public function dns_soa(){
@@ -50,6 +50,11 @@ class Dns {
 				if($position[$key] == "MX"){
 					array_push($aux,  "[". $position["pri"] . "] " . $position["target"]);
 				}
+
+				if($position[$key] == "AAAA"){
+					array_push($aux, $position["ipv6"]);
+				}
+
 			}
 		}
 
