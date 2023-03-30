@@ -20,7 +20,7 @@ class Dns {
 	}
 
 	public function dns_ns(){
-		return dns_get_record($this->host, DNS_NS);
+		return $this->clean_arr(dns_get_record($this->host, DNS_NS));
 	}
 
 	public function dns_cname(){
@@ -58,6 +58,11 @@ class Dns {
 				if($position[$key] == "TXT"){
 					array_push($aux, $position["txt"]);
 				}
+
+				if($position[$key] == "NS"){
+					array_push($aux, $position["target"]);
+				}
+
 
 			}
 		}
