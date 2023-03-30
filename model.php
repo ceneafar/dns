@@ -8,13 +8,12 @@ class Dns {
 	}	
 
 	public function dns_a(){
-		return dns_get_record($this->host, DNS_A);
+		return $this->clean_arr(dns_get_record($this->host, DNS_A));
 	}
 
 	public function dns_mx(){
-		return dns_get_record($this->host, DNS_MX);
+		return $this->clean_arr(dns_get_record($this->host, DNS_MX));
 	}
-
 
 	public function dns_txt(){
 		return dns_get_record($this->host, DNS_TXT);
@@ -43,11 +42,14 @@ class Dns {
 			foreach($position as $key => $value){
 				$result["type"] = $position["type"];
 				$result["ttl"] = $position["ttl"];
+
+				if($position[$key] == "A"){
+					array_push($aux, $position["ip"]);
+				}
+
 				if($position[$key] == "MX"){
 					array_push($aux,  "[". $position["pri"] . "] " . $position["target"]);
 				}
-
-
 			}
 		}
 
