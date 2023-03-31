@@ -32,7 +32,7 @@ class Dns {
 	}
 
 	public function dns_soa(){
-		return dns_get_record($this->host, DNS_SOA);
+		return $this->clean_arr(dns_get_record($this->host, DNS_SOA));
 	}
 
 	public function clean_arr($arr){
@@ -63,6 +63,17 @@ class Dns {
 					array_push($aux, $position["target"]);
 				}
 
+				if($position[$key] == "SOA"){
+					$aux = array(
+						"mname" =>  $position["mname"],
+						"rname" => $position["rname"],
+						"serial" => $position["serial"],
+						"refresh" => $position["refresh"],
+						"retry" => $position["retry"],
+						"expire" => $position["expire"],
+						"ttl" => $position["ttl"],
+					);
+				}
 
 			}
 		}
