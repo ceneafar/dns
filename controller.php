@@ -13,37 +13,40 @@ if(isset($_POST["btn"])){
 	$soa_record = $dns->dns_soa();
 
 	function print_clean_arr($arr){	
+		echo "<tr>";
 		foreach($arr as $key){
 			if(gettype($key) == "array") {
-
+				echo "<td>";
 				foreach($key as $newKey){
-					echo $newKey .  "<br>";
+					echo $newKey . "<br>";
 				}
-
+				echo "</td>";
 			} else {
-				echo $key . "<br>";
+				echo "<td>" . $key . "</td>";
 			}
 		}
+		echo "</tr>";
 	}
 
-	echo "<br>";
 
-	print_clean_arr($a_record);
-	echo "<br>";
-	echo "<br>";
-	print_clean_arr($mx_record);
-	echo "<br>";
-	echo "<br>";
-	print_clean_arr($txt_record);
-	echo "<br>";
-	echo "<br>";
-	print_clean_arr($ns_record);
-	echo "<br>";
-	echo "<br>";
-	print_clean_arr($aaaa_record);
-	echo "<br>";
-	echo "<br>";
-	print_clean_arr($soa_record);
+	echo "<table class='table'>";
+		echo "<thead>";
+			echo "<tr>";
+				echo "<th scope='colr'>type</th>";
+				echo "<th scope='colr'>ttl</th>";
+				echo "<th scope='colr'>value</th>";
+			echo "</tr>";
+		echo "</thead>";
+		echo "<tbody>";
+			print_clean_arr($a_record);
+			print_clean_arr($aaaa_record);
+			print_clean_arr($mx_record);
+			print_clean_arr($ns_record);
+			print_clean_arr($soa_record);
+			print_clean_arr($txt_record);
+		echo "</tbody>";
+	echo "</table>";
+
 }
 
 
