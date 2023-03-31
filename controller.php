@@ -12,22 +12,38 @@ if(isset($_POST["btn"])){
 	$aaaa_record = $dns->dns_aaaa();
 	$soa_record = $dns->dns_soa();
 
-	print_r($a_record);
+	function print_clean_arr($arr){	
+		foreach($arr as $key){
+			if(gettype($key) == "array") {
+
+				foreach($key as $newKey){
+					echo $newKey .  "<br>";
+				}
+
+			} else {
+				echo $key . "<br>";
+			}
+		}
+	}
+
+	echo "<br>";
+
+	print_clean_arr($a_record);
 	echo "<br>";
 	echo "<br>";
-	print_r($mx_record);
+	print_clean_arr($mx_record);
 	echo "<br>";
 	echo "<br>";
-	print_r($txt_record);
+	print_clean_arr($txt_record);
 	echo "<br>";
 	echo "<br>";
-	print_r($ns_record);
+	print_clean_arr($ns_record);
 	echo "<br>";
 	echo "<br>";
-	print_r($aaaa_record);
+	print_clean_arr($aaaa_record);
 	echo "<br>";
 	echo "<br>";
-	print_r($soa_record);
+	print_clean_arr($soa_record);
 }
 
 
