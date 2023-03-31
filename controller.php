@@ -29,12 +29,12 @@ if(isset($_POST["btn"])){
 	}
 
 
-	echo "<table class='table'>";
-		echo "<thead>";
+	echo "<table class='table table-striped table-bordered table-hover table-sm'>";
+		echo "<thead class='table-dark'>";
 			echo "<tr>";
-				echo "<th scope='colr'>type</th>";
-				echo "<th scope='colr'>ttl</th>";
-				echo "<th scope='colr'>value</th>";
+				echo "<th scope='col'>type</th>";
+				echo "<th scope='col'>ttl</th>";
+				echo "<th scope='col'>value</th>";
 			echo "</tr>";
 		echo "</thead>";
 		echo "<tbody>";

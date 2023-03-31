@@ -6,10 +6,10 @@
     <title>DNS look up</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
   </head>
-  <body>
+  <body class=".flex-column justify-content-center align-items-center" style="width:80%;">
 
-<form method="post">
-	<input type="text"  class="form-control" name="url" value="google.com">
+<form method="post" class="d-flex justify-content-center align-items-center w-3">
+	<input type="text"  class="form-control w-40 p-3" name="url" value="google.com">
 	<input  class="btn btn-primary" name="btn" type="submit" value="send">
 </form>
 
