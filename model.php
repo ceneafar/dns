@@ -65,13 +65,13 @@ class Dns {
 
 				if($position[$key] == "SOA"){
 					$aux = array(
-						"mname" =>  $position["mname"],
-						"rname" => $position["rname"],
-						"serial" => $position["serial"],
-						"refresh" => $position["refresh"],
-						"retry" => $position["retry"],
-						"expire" => $position["expire"],
-						"ttl" => $position["ttl"],
+						"mnamei: " .  $position["mname"],
+						"rname: " .  $position["rname"],
+						"serial : " . $position["serial"],
+						"refresh: " . $position["refresh"],
+						"retry: " . $position["retry"],
+						"expire: " . $position["expire"],
+						"ttl: " . $position["ttl"],
 					);
 				}
 
@@ -79,6 +79,8 @@ class Dns {
 		}
 
 		array_push($result, $aux);
+
+
 
 		return $result;
 	}
