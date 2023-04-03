@@ -10,7 +10,7 @@
   <body class=".flex-column justify-content-center align-items-center" style="width:80%;">
 
 <form method="post" class="d-flex justify-content-center align-items-center w-3">
-	<input type="text"  class="form-control w-40 p-3" name="url" value="google.com">
+	<input type="text"  class="form-control w-40 p-3" name="url" placeholder="url.com" required>
 	<input  class="btn btn-primary" name="btn" type="submit" value="send">
 </form>
 
