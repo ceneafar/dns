@@ -16,13 +16,13 @@ if(isset($_POST["btn"])){
 		echo "<tr>";
 		foreach($arr as $key){
 			if(gettype($key) == "array") {
-				echo "<td>";
+				echo "<td class='value'>";
 				foreach($key as $newKey){
 					echo $newKey . "<br>";
 				}
 				echo "</td>";
 			} else {
-				echo "<td>" . $key . "</td>";
+				echo "<td class='value'>" . $key . "</td>";
 			}
 		}
 		echo "</tr>";
