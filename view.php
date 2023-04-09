@@ -10,6 +10,7 @@
   <body class=".flex-column justify-content-center align-items-center" style="width:80%;">
 
 <h1>dns lookup</h1>
+<h2>your ip: <?php echo $_SERVER["REMOTE_ADDR"]; ?></h2>
 
 <hr class="hr hr-blurry" />
 

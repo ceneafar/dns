@@ -49,7 +49,6 @@ if(isset($_POST["btn"])){
 	print_clean_arr($txt_record);
 	echo "</tbody>";
 	echo "</table>";
-
 }
 
 ?>
