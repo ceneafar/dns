@@ -1,7 +1,7 @@
 <?php
 
 if(isset($_POST["btn"])){
-	require "model.php";
+	require "../model/model.php";
 	$url = $_POST["url"];
 	$dns = new Dns($url);
 
